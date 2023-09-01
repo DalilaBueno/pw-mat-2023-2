@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formata {
+
+            font-family: 'Courier New', monospace;
+
+            color: blue;
+
+            background-color: powderblue;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel/body">
+
+        const parag1 = React.createElement('p', {
+            classname: 'formata'
+            childreen: 'Parágrafo criado apenas com React'
+        })
+        const parag2 = <p classname="formata">àrágrafo criado com Babel+JSX</p>
+        //criando variáveis pra representar props
+        const classeCss= 'formata'
+        const conteudo= 'Páragrafo criado com Babel+JSX e variáveis interpoladas'
+
+        //Criando um elemnto usando variaveis interpoladas
+        const parag3 = <p classname={classeCss}>conteudo</p>
+
+        //Definindo um objeto com props
+        const atribs = {
+            classname: 'formata'
+            children: 'Parágrafo criado com Babel+JSX e espalhameto de props'
+        }
+        //Criando um elemnto usando espalhameto de props
+        const parag4 = <p{...atribs} />
+
+        //const container = React.creatElement(
+        //'div',
+        //{ id: 'container' },
+        //[parag1, parag2, parag3, parag4]
+        //)
+
+        //Refazendo o container usando JSX
+        const container = 
+        <div id="container">
+            {parag1}
+            {parag2}
+            {parag3}
+            {parag4}
+        </div>
+
+        const root= ReactDOM.createRoot(document.getElementById('div'))
+
+        root.render(container)
+        
+        [parag1]
+    </body>
+     
+</html> 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .saida {
+            background-color: indigo;
+            border-radius: 8px;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-family: Cambria, "Times New Romam", serif;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+    script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel/body">
+
+
+        /*FUNÇÕES DE COMPONENTES
+        - Sempre iniciam que letras maiusculas
+        - Receber props entre {}
+        */
+
+        function Saudar({ nome, msg}){
+            return <div classname="saida">{msg}, {nome} ! </div>
+        }
+
+        //Criação de um componente usando a chamada de função
+        const saudar1 = Saudar({msg: 'Bom dia', nome:'Dona Clementina'})
+
+        //Criação de um componente usando JSX para invocar a função
+        const Saudar2 = <Saudar msg="Boa noite" nome="Brasil"/>
+
+        const container =
+        <>  {/*Este é o chamado FRAGMENT pseudo elemento usado para "Agrupar" outros componentes, sem gerar resultdos em html*/
+    }
+       {saudar1} 
+       {saudar2}
+       (/*Componente criado diretamente dentro do container*/)
+       <Saudar msg="passa o pix do milho" nome="Pai"/>
+
+       </>
+
+       const root = ReactDOM.creatRoot(document.getElementById('root'))
+       root.render(Saudar)
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <div ide="root"> </div>
+    <script>
+
+        /*no react os atributos de um elemento HTML são chamados de PROPS, sendo definidos por meio de um objetivo JavaScript */
+
+        const atributos = {
+
+            id: 'div-react',
+
+            children: 'DIV criada com React',
+
+            Style: { border: '2px solid blue', backgroundColor: 'pink' }
+
+        }
+        //usando react para criar um elemento vom as props definidas
+
+        // anteriormente
+
+        const novaDiv = React.creatElement('div', atributos)
+
+        /* criando um elemnto definido as props na propria chamada da função React.CreateElemente()*/
+        const botao = React.creatElement('button', {
+            id: 'botao1',
+            style: { color: 'red', backgroundColor: 'yellow' }, 
+            onclick: function () {
+                
+        //childreen 'Clique aqui'
+        }, 'CLIQUE AQUI!')
+
+        const parag = React.creatElement('p', null, 'Parágrafo sem frescura')
+
+        const container = React.creatElement(
+            'div'                   //tipo de elemento
+        { id: 'container' },       //Props
+            [novaDiv, parag, botao]        //Childreen
+        )
+
+        //"encaixando" o novo elemento na estrutura da pagina
+
+        const root = ReactDOM.create(document.getElementById('root'))
+
+        root.render(novaDiv)
+
+        
+
+    </script>
+</body>
+</html>
